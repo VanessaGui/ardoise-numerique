@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+        <link rel="stylesheet" href="../../styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">  
+        {% endblock %}
+{% block title %}Edit Ardoise{% endblock %}
+
+{% block body %}
+    <div class="header">
+        <a class="menu menu-item" href="{{ path('app_logout') }}">Se déconnecter</a>
+    </div>
+<div class="title2 title-color">
+    <h1>Editer l'Ardoise</h1>
+</div>
+<div class="container2">
+    {{ include('ardoise/_form.html.twig', {'button_label': 'Editer'}) }}
+
+    <a class="menu-item" href="{{ path('app_ardoise_index') }}">retour à la liste</a>
+
+{{ include('ardoise/_delete_form.html.twig') }}
+</div>
+{% endblock %}

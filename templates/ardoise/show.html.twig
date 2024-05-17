@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ardoise{% endblock %}
+
+{% block body %}
+    <div class="header">
+        <a class="menu menu-item" href="{{ path('app_logout') }}">Se déconnecter</a>
+    </div>
+    <div class="title2 title-color">
+        <h1>Ardoise</h1>
+    </div>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ ardoise.id }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ ardoise.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Montant</th>
+                <td>{{ ardoise.montant }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="menu-item" href="{{ path('app_ardoise_index') }}">retour à la liste</a>
+
+    <a class="menu-item" href="{{ path('app_ardoise_edit', {'id': ardoise.id}) }}">éditer</a>
+
+    {{ include('ardoise/_delete_form.html.twig') }}
+{% endblock %}

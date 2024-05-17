@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Ardoise{% endblock %}
+
+{% block body %}
+    <div class="header">
+        <a class="menu menu-item" href="{{ path('app_logout') }}">Se déconnecter</a>
+    </div>
+ <div class="title2 title-color">
+    <h1>Créer une Ardoise</h1>
+</div>
+<div class="container2">
+    {{ include('ardoise/_form.html.twig') }}
+    <a class="menu-item" href="{{ path('app_ardoise_index') }}">retour à la liste</a>
+</div>
+{% endblock %}
